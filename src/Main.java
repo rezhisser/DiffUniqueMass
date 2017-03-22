@@ -17,14 +17,12 @@ public class Main {
 		System.out.println(Arrays.toString(diffUniqueElementMass(str2,str1)));
 		
 		System.out.println(Arrays.toString(strUniq));
-	
-		
 		
 	}
 	
 	public static String [] diffUniqueElementMass (String [] a, String [] b){
-		int tmp=0; //tmp-переменная для подсчета количества итераций прохода по внутреннему массиву
-		int countUnique = 0; // количество уникальных значений во внешнем массиве
+		int tmp=0;
+		int countUnique = 0; // count unique value
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (a[i].equals(b[j])== true){
@@ -48,7 +46,7 @@ public class Main {
 						break;
 					}else if (a[i].equals(b[j])== false){
 						tmp++;
-						if (tmp == b.length){
+						if (tmp == b.length){ //if iterate all array and did not find the value - this uniq value. Add it to array
 							str3[k] = a[i];
 							k++;
 							tmp=0;
